@@ -3,6 +3,9 @@ class Album
   include Mongoid::Timestamps
   
   field :name
+  field :cover_url
+  
+  key :name
   
   embedded_in :band
 end
