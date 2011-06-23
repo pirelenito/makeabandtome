@@ -35,5 +35,6 @@ gem "jquery-rails"
 gem "bson_ext"
 gem "mongoid"
 gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
+gem 'compass'
 
 gem 'nokogiri'
