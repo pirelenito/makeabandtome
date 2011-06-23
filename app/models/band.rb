@@ -10,17 +10,24 @@ class Band
   embeds_many :albums
   
   def self.generate
-    Band.create name: Nokogiri::HTML(open('http://en.wikipedia.org/wiki/Special:Random'))
+    Band.create do |band|
+      band.generate_fields
+    end
+  end
+  
+  def generate_fields
+    generate_name
+    generate_first_album
+  end
+  
+  def generate_name
+    self.name = Nokogiri::HTML(open('http://en.wikipedia.org/wiki/Special:Random'))
       .css('.firstHeading').first().content()
   end
   
-  def generate_album
-    cover_url = Nokogiri::HTML(open('http://www.flickr.com/explore/'))
-      .css('.photo_container img:first').first().attribute('src').value()
-    
-    name = Nokogiri::HTML(open('http://quotationspage.com/random.php3'))
-      .css('.quote a').last().content().split()[-4..-1].join(' ').capitalize()
-    
-    self.albums.create name: name, cover_url: cover_url
+  def generate_first_album
+    self.albums.new do |album|
+      album.generate_fields
+    end
   end
 end
