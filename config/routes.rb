@@ -1,4 +1,9 @@
 Makeabandtome::Application.routes.draw do
+  
+  root :to => "bands#new"
+ 
+  resources :bands
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
