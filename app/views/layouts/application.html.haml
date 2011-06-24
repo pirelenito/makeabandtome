@@ -1,0 +1,11 @@
+%html
+%head
+  %title Make a band to me
+  = include_stylesheets :app
+  = include_javascripts :app
+  = csrf_meta_tag
+%body
+  .logo Make a band to me
+
+  .content
+    = yield
