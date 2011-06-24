@@ -1,6 +1,17 @@
+$white: #F4EAD5;
+
 body {
   font-family: 'Lucida Grande';
+  font-size: 13px;
   background: url('/images/background.gif');
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .logo {
@@ -14,9 +25,47 @@ body {
 
 .content {
   @include border-radius(5px);
+  @include box-shadow;
   background: rgba(255,255,255,0.8);
   width: 450px;
   height: 450px;
   padding: 20px;
   margin: 120px auto 0 auto;
+}
+
+.footer {
+  @include border-radius(5px);
+  @include box-shadow;
+  margin: 20px auto;
+  width: 960px;
+  background-color: #0A2425;
+  color: $white;
+  overflow: auto;
+  
+  a {
+    color: $white;
+  }
+  
+  p {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  .explanation, .references, .thanks {
+    float: left;
+    width: 440px;
+    margin: 20px;
+  }
+  
+  .explanation {
+    ul {
+      list-style-type: decimal;
+      padding-left: 50px;
+    }
+  }
 }
