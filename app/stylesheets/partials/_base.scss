@@ -1,0 +1,22 @@
+body {
+  font-family: 'Lucida Grande';
+  background: url('/images/background.gif');
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 650px;
+  height: 131px;
+  background: url('/images/logo.png') no-repeat;
+}
+
+.content {
+  @include border-radius(5px);
+  background: rgba(255,255,255,0.8);
+  width: 450px;
+  height: 450px;
+  padding: 20px;
+  margin: 120px auto 0 auto;
+}
