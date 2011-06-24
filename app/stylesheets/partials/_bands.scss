@@ -1,0 +1,53 @@
+@import "compass/css3/text-shadow";
+$default-text-shadow-color: black;
+$default-text-shadow-blur: 3px;
+
+@mixin album-font {
+  @include text-shadow;
+  color: white;
+  z-index: 2;
+  font-family: 'Lucida Grande';
+}
+
+.album {
+  margin: 100px auto;
+  
+  position: relative;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  
+  border: 1px solid black;
+  
+  .cover {
+    height: 100%;
+  }
+  
+  .band {
+    @include album-font;
+    font-size: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    
+    position: absolute;
+    top: 120px;
+    left: 10px;
+    right: 10px;
+  }
+  
+  .title {
+    @include album-font;
+    font-size: 18px;
+    
+    background: rgba(0,0,0,0.8);
+    
+    position: absolute;
+    text-align: right;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    
+    padding: 5px;
+  }
+}
