@@ -4,6 +4,8 @@ class Album
   
   field :name
   field :cover_url
+  field :cover_source
+  field :cover_photo_by
   
   key :name
   
@@ -20,7 +22,10 @@ class Album
   end
   
   def generate_cover
-    self.cover_url = Nokogiri::HTML(open('http://www.flickr.com/explore/'))
-      .css('.photo_container img:first').first().attribute('src').value()
+    doc = Nokogiri::HTML(open('http://www.flickr.com/explore/'))
+    
+    self.cover_url = doc.css('.photo_container img:first').first().attribute('src').value()
+    self.cover_source = 'http://www.flickr.com' + doc.css('.PhotoBy a:first').first().attribute('href').value()
+    self.cover_photo_by = doc.css('.PhotoBy a:last b').first().content()
   end
 end
