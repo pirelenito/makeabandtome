@@ -1,5 +1,8 @@
+.presentation Your New Band:
+
 .album
   %img.cover{src: @band.albums.first.cover_url}
   %label.band= @band.name
   %label.title= @band.albums.first.name
 
+= button_to "Make a band to me!", new_band_url, :class => 'new-band', :method => :get

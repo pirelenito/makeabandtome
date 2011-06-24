@@ -1,21 +1,23 @@
-@import "compass/css3/text-shadow";
-$default-text-shadow-color: black;
-$default-text-shadow-blur: 3px;
-
 @mixin album-font {
   @include text-shadow;
   color: white;
   z-index: 2;
-  font-family: 'Lucida Grande';
+}
+
+.presentation {
+  margin-bottom: 10px;
+}
+
+.new-band {
+  margin: 10px 0;
 }
 
 .album {
-  margin: 100px auto;
-  
   position: relative;
   width: 400px;
   height: 400px;
   overflow: hidden;
+  margin: 0 auto;
   
   border: 1px solid black;
   
