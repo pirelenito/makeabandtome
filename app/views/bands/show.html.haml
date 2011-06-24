@@ -5,4 +5,8 @@
   %label.band= @band.name
   %label.title= @band.albums.first.name
 
+.photo-credits
+  Photo by
+  = link_to @band.albums.first.cover_photo_by, @band.albums.first.cover_source
+  
 = button_to "Make a band to me!", new_band_url, :class => 'new-band', :method => :get

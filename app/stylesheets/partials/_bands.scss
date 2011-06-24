@@ -4,20 +4,12 @@
   z-index: 2;
 }
 
-.presentation {
-  margin-bottom: 10px;
-}
-
-.new-band {
-  margin: 10px 0;
-}
-
 .album {
   position: relative;
   width: 400px;
   height: 400px;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 10px auto;
   
   border: 1px solid black;
   
@@ -52,4 +44,8 @@
     
     padding: 5px;
   }
+}  
+  
+.photo-credits {
+  text-align: right;
 }
